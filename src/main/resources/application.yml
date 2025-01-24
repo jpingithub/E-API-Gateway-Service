@@ -17,7 +17,7 @@ spring:
           predicates:
             - Path=/purchases/**
         - id: profile-management-route
-          uri: lb://PROFILE-MANAGEMENT
+          uri: https://ecommerce-profile-service.onrender.com
           predicates:
             - Path=/users/**
       default-filters:
