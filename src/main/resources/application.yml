@@ -5,15 +5,15 @@ spring:
     gateway:
       routes:
         - id: product-management-route
-          uri: lb://PRODUCT-MANAGEMENT
+          uri: https://ecommerce-product-management.onrender.com
           predicates:
             - Path=/products/**
         - id: cart-management-route
-          uri: lb://CART-MANAGEMENT
+          uri: https://ecommerce-cart-service.onrender.com
           predicates:
             - Path=/cart/**
         - id: cart-management-route
-          uri: lb://CART-MANAGEMENT
+          uri: https://ecommerce-cart-service.onrender.com
           predicates:
             - Path=/purchases/**
         - id: profile-management-route
@@ -28,15 +28,6 @@ spring:
               allowedOrigins: "http://localhost:5173"
               allowedMethods: "*"
               allowedHeaders: "*"
-
-eureka:
-  client:
-    service-url:
-     defaultZone: https://eureka-for-ecommerce.onrender.com/eureka/
-    fetch-registry: true
-    register-with-eureka: true
-  instance:
-    prefer-ip-address: true
       
 server:
   port: 9000
